@@ -27,6 +27,19 @@ import { GradoNewComponent } from './grado/components/forms/grado-new/grado-new.
 import { GradoEditComponent } from './grado/components/forms/grado-edit/grado-edit.component';
 import { GradoListComponent } from './grado/components/list/grado-list/grado-list.component';
 import { GradoComponent } from './grado/container/grado/grado.component';
+import { SeccionNewComponent } from './seccion/components/forms/seccion-new/seccion-new.component';
+import { SeccionEditComponent } from './seccion/components/forms/seccion-edit/seccion-edit.component';
+import { SeccionListComponent } from './seccion/components/list/seccion-list/seccion-list.component';
+import { SeccionComponent } from './seccion/container/seccion/seccion.component';
+import { AreaNewComponent } from './area/components/forms/area-new/area-new.component';
+import { AreaEditComponent } from './area/components/forms/area-edit/area-edit.component';
+import { AreaListComponent } from './area/components/list/area-list/area-list.component';
+import { AreaComponent } from './area/container/area/area.component';
+import { CursoNewComponent } from './curso/components/forms/curso-new/curso-new.component';
+import { CursoEditComponent } from './curso/components/forms/curso-edit/curso-edit.component';
+import { CursoListComponent } from './curso/components/list/curso-list/curso-list.component';
+import { CursoComponent } from './curso/container/curso/curso.component';
+import { AreaCursosComponent } from './area/components/forms/area-cursos/area-cursos.component';
 //import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -72,6 +85,19 @@ import { GradoComponent } from './grado/container/grado/grado.component';
     GradoEditComponent,
     GradoListComponent,
     GradoComponent,
+    SeccionNewComponent,
+    SeccionEditComponent,
+    SeccionListComponent,
+    SeccionComponent,
+    AreaNewComponent,
+    AreaEditComponent,
+    AreaListComponent,
+    AreaComponent,
+    CursoNewComponent,
+    CursoEditComponent,
+    CursoListComponent,
+    CursoComponent,
+    AreaCursosComponent,
     
 
     //LoginComponent,

@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { Grado } from '../../model/grado';
 import { Nivel} from '../../../nivel/model/nivel';
-import {NivelService} from '../../../../../providers/nivel/nivel.service';
+
 import { GradoService} from '../../../../../providers/grado/grado.service';
 import { GradoNewComponent } from '../../components/forms/grado-new/grado-new.component';
 import { GradoEditComponent } from '../../components/forms/grado-edit/grado-edit.component';
-import { element } from 'protractor';
+
 
 @Component({
   selector: 'app-grado',
@@ -35,69 +35,10 @@ export class GradoComponent implements OnInit {
     
     this.gradoService.getGrado().subscribe(response =>{
     this.gradosf=response.data;
-    for (let g of this.gradosf){  
-      console.log("añslfjasdf");
-      console.log(g.nivel_name.length);
-      console.log(g.nom_grado);
-      //this.listaNiveles.push(gg);
-        
-    }
-    console.log("grados inicio");
-    console.log(this.gradosf);
-    console.log("grados inicio");
-
-    this.gradoService.getNivel(4).subscribe(response=>{
-      this.nivel=response.data;
-
-      console.log("nivel inicio");
-      console.log(this.nivel);
-      console.log(this.nivel.nom_nivel);
-      console.log("nivel final");
-      //console.log("lista inicio");
-      this.listaNiveles=[];
-    this.listaNiveles.push(this.nivel)
-    console.log(this.listaNiveles);
     
-    console.log(this.listaNiveles);
-    for (let g of this.listaNiveles){  
-      console.log("añslfjasdf");
-      console.log(g.nom_nivel);
-      //this.listaNiveles.push(gg);
-        
-    }
-    
-    /*console.log(this.listaNiveles);
-    console.log("lista fin");
-      var ss:Object;
-      //this.nivel
-      console.log("inicio recuperar nivel");
-      console.log(this.nivel);
-      ss=this.nivel.nom_nivel;
-      nom_nivel: this.nivel.nom_nivel,
-      console.log(ss+"dd");
-      console.log(this.nivel.nom_nivel);
-      console.log("fin recuperar nivel");*/
-      
-      /*const gradosOfNivelForm=this.modalService.open(Prueba3Component,{size:'lg'});
-      gradosOfNivelForm.componentInstance.title="Lista de grados";
-      gradosOfNivelForm.componentInstance.grados=this.grados;
-      console.log("inicio recuperar grados de nivel");
-      console.log(this.grados);
-      console.log("fin recuperar grados de nivel");*/
     });
     
-    for (let g of this.gradosf){  
-      let gg=this.searchNivelOfGrado(g.id)
-      //console.log(gg);
-      //this.listaNiveles.push(gg);
-        
-    }
-    
-    
-    
-    }, error =>{
-      this.error=error
-    });
+   
   }
 
   public onNewGrado($event):void{
@@ -150,36 +91,7 @@ export class GradoComponent implements OnInit {
     });
   }
 
-  searchNivelOfGrado(id:number){
-    this.gradoService.getNivel(id).subscribe(response=>{
-      this.nivel=response.data;
-      //console.log("lista inicio");
-    this.listaNiveles.push(this.nivel)
-    
-    /*console.log(this.listaNiveles);
-    console.log("lista fin");
-      var ss:Object;
-      //this.nivel
-      console.log("inicio recuperar nivel");
-      console.log(this.nivel);
-      ss=this.nivel.nom_nivel;
-      nom_nivel: this.nivel.nom_nivel,
-      console.log(ss+"dd");
-      console.log(this.nivel.nom_nivel);
-      console.log("fin recuperar nivel");*/
-      
-      /*const gradosOfNivelForm=this.modalService.open(Prueba3Component,{size:'lg'});
-      gradosOfNivelForm.componentInstance.title="Lista de grados";
-      gradosOfNivelForm.componentInstance.grados=this.grados;
-      console.log("inicio recuperar grados de nivel");
-      console.log(this.grados);
-      console.log("fin recuperar grados de nivel");*/
-    });
-    
-    return this.nivel;
-    console.log("retornado");
-
-  }
+  
 
   
 

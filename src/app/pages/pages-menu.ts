@@ -216,25 +216,31 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Niveles',
     icon: 'grid-outline',
-    children: [
-      {
-        title: 'Niveles',
-        link: '/pages/niveles',
-      },
-      
-    ],
+    link: '/pages/niveles',
   },
 
   {
     title: 'Grados',
-    icon: 'grid-outline',
-    children: [
-      {
-        title: 'Grados',
-        link: '/pages/grados',
-      },
-      
-    ],
+    icon: 'layers-outline',
+    link: '/pages/grados',
+  },
+
+  {
+    title: 'Secciones',
+    icon: 'layers-outline',
+    link: '/pages/secciones',
+  },
+
+  {
+    title: 'Areas',
+    icon: 'layers-outline',
+    link: '/pages/areas',
+  },
+
+  {
+    title: 'Cursos',
+    icon: 'layers-outline',
+    link: '/pages/cursos',
   },
 
   

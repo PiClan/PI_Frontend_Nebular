@@ -34,9 +34,9 @@
         <td>{{n.updated_at}}</td>
         <td>{{n.nivel_name.nom_nivel}}</td>
         <!--<td>{{listaNiveles[i].nom_nivel}}</td>-->
-        <td><button class="btn-danger" (click)="delete(n.id)">Eliminar</button>
-          <button class="btn-primary" (click)="editGrado(n.id)">Editar</button>
-          <button class="btn-success" (click)="searchNivelOfGrado(n.id)">Grados</button>
+        <td><button nbButton hero status="danger" (click)="delete(n.id)">Eliminar</button>
+          <button nbButton hero status="primary" (click)="editGrado(n.id)">Editar</button>
+          <button nbButton hero status="info" (click)="searchNivelOfGrado(n.id)">Grados</button>
         </td>
         </tr>
      

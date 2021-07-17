@@ -7,6 +7,9 @@ import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { NivelComponent } from './nivel/container/nivel/nivel.component';
 import { GradoComponent} from './grado/container/grado/grado.component';
+import { SeccionComponent} from './seccion/container/seccion/seccion.component';
+import { AreaComponent} from './area/container/area/area.component';
+import { CursoComponent} from './curso/container/curso/curso.component';
 
 
 const routes: Routes = [{
@@ -75,6 +78,21 @@ const routes: Routes = [{
     {
       path: 'grados',
       component:GradoComponent
+    },
+
+    {
+      path: 'secciones',
+      component:SeccionComponent
+    },
+
+    {
+      path: 'areas',
+      component:AreaComponent
+    },
+
+    {
+      path: 'cursos',
+      component:CursoComponent
     },
 
     {

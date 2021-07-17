@@ -1,23 +1,11 @@
 
   <!-- Page content -->
-  <div class="container mt--8 pb-5">
+  <!--<div class="container mt--8 pb-5">
     <div class="row justify-content-center">
-      <div class="col-lg-5 col-md-7">
+      <div class="">
         <div class="card bg-secondary shadow border-0">
-          <div class="card-header bg-transparent pb-5">
-            <div class="text-muted text-center mt-2 mb-3"><small>Sign in with</small></div>
-            <div class="btn-wrapper text-center">
-              <a href="javascript:void(0)" class="btn btn-neutral btn-icon">
-                <span class="btn-inner--icon"><img src="../../../assets/images/icons/google.svg"></span>
-                <span class="btn-inner--text">Github</span>
-              </a>
-              <a href="javascript:void(0)" class="btn btn-neutral btn-icon">
-                <span class="btn-inner--icon"><img src="../../../assets/images/icons/google.svg"></span>
-                <span class="btn-inner--text">Google</span>
-              </a>
-            </div>
-          </div>
-          <div class="card-body px-lg-5 py-lg-5">
+          
+          <div class="card-body ">
             <div class="text-center text-muted mb-4">
               <small>Or sign in with credentials</small>
             </div>
@@ -37,13 +25,13 @@
                   </div>
                   <input class="form-control" placeholder="Password" type="password" formControlName="password">
                 </div>
-              </div><!--
+              </div>
               <div class="custom-control custom-control-alternative custom-checkbox">
                 <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
                 <label class="custom-control-label" for=" customCheckLogin">
                   <span class="text-muted">Remember me</span>
                 </label>
-              </div>-->
+              </div>
               <div class="text-center">
                 <button type="button" class="btn btn-primary my-4" (click)="login()">Loginasdf</button>
               </div>
@@ -60,5 +48,94 @@
         </div>
       </div>
     </div>
+  </div>-->
+  
+
+
+
+
+
+  <h1 id="title" class="title">Login</h1>
+<p class="sub-title">Inicio con cuenta de correo</p>
+
+
+
+<form role="form" [formGroup]="loginForm">
+
+  <div class="form-group">
+    <label class="label" for="input-email">Email address:</label>
+    <input 
+          class="form-control"
+           fullWidth
+           
+           formControlName="email"
+           
+           #email=""
+           name="email"
+           id="input-email"
+           
+           placeholder="Email address"
+           fieldSize="large"
+           autofocus
+           
+           
+           [attr.aria-invalid]="email.invalid && email.touched ? true : null">
+    <ng-container *ngIf="email.invalid && email.touched">
+      <p class="caption status-danger" *ngIf="email.errors?.required">
+        Email is required!
+      </p>
+      <p class="caption status-danger" *ngIf="email.errors?.pattern">
+        Email should be the real one!
+      </p>
+    </ng-container>
+  </div>
+
+  <div class="form-group">
+    <span class="label-with-link">
+      <label class="label" for="input-password">Password:</label>
+     
+    </span>
+    <input 
+           class="form-control"
+           nbInput
+           fullWidth
+           formControlName="password"
+           #password=""
+           name="password"
+           type="password"
+           id="input-password"
+           placeholder="Password"
+           fieldSize="large"
+          
+           [attr.aria-invalid]="password.invalid && password.touched ? true : null">
+    <ng-container *ngIf="password.invalid && password.touched ">
+      <p class="caption status-danger" *ngIf="password.errors?.required">
+        Password is required!
+      </p>
+      <p class="caption status-danger" *ngIf="password.errors?.minlength || password.errors?.maxlength">
+        Password should contain
+        from {{ getConfigValue('forms.validation.password.minLength') }}
+        to {{ getConfigValue('forms.validation.password.maxLength') }}
+        characters
+      </p>
+    </ng-container>
+  </div>
+
+  <div class="form-control-group accept-group">
+    <nb-checkbox name="rememberMe" [(ngModel)]="user.rememberMe" *ngIf="rememberMe">Remember me</nb-checkbox>
+  </div>
+  <div class="text-center">
+    <button type="button" class="btn btn-primary " (click)="login()">
+      Log In
+    </button>
+
   </div>
   
+</form>
+
+
+
+<section class="another-action" aria-label="Register">
+  ¿No estás registrado aún?<a class="text-link" routerLink="../register"> Registrarse</a>
+</section>
+
